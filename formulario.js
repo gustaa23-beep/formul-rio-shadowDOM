@@ -12,27 +12,27 @@ class FormBuilder extends HTMLElement {     //CRIANDO UMA CLASSE QUE HERDA WEB C
         shadow.appendChild(this.styles())   //LIGANDO O STYLE A SHADOW DOM
 
 
-        const divs = this.createDiv()
+        const mains = this.createHeader()
         const forms = this.createForms()   
         const groups = this.createGroups()
         
         forms.appendChild(groups)   //LIGANDO <fieldset> ao <forms>
 
-        shadow.appendChild(divs)    //LIGANDO A DIV AO SHADOW DOM
+        shadow.appendChild(mains)    //LIGANDO A DIV DE CABEÇALHO AO SHADOW DOM
         shadow.appendChild(forms)
     }
 
-    createDiv() {
-        const div1 = document.createElement('div')              //CRIANDO A TAG HMTL <div>
+    createHeader() {
+        const main = document.createElement('div')              //CRIANDO A TAG HMTL <div>
         const title = document.createElement('h1')              //CRIANDO A TAG HMTL <h1>
         const subtitle = document.createElement('p')            //CRIANDO A TAG HMTL <p>
         title.id = "titulo"                                     //CRIANDO UM ID CHAMADO TITULO EM <h1>
         subtitle.id = "subtitulo"                               //CRIANDO UM ID CHAMADO SUBTITULO EM <p>
-        div1.appendChild(title)                                 //LIGANDO <h1> a <div>
-        div1.appendChild(subtitle)                              //LIGANDO <p> a <div>
+        main.appendChild(title)                                 //LIGANDO <h1> a <div>
+        main.appendChild(subtitle)                              //LIGANDO <p> a <div>
         title.innerHTML = "Cadastro de Dev's"                   //NOMEANDO TITULO
         subtitle.innerHTML = "Complete suas informações"        //NOMEANDO SUBTITULO
-        return div1
+        return main
     }
 
     createForms(){
